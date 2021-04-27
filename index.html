@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/login.js"></script>
+
+</head>
+
+<body>
+  <div class="header">
+    <h2>PROJECT BY - Group 10</h2>
+  </div>
+  <div class="loader">
+    <div class="loader-wheel"></div>
+    <div class="loader-text"></div>
+  </div>
+  <img class="mainimg1" src="https://drive.google.com/uc?export=view&id=14WT3nhv45KSb3cxsG5oMd8-EVSf0BH5z" alt="Hospital">
+  <img class="mainimg2" src="https://drive.google.com/uc?export=view&id=1abDKE-zabArVt088A-XtLRPZDi7dvDnG" alt="Hospital">
+  <div class="main">
+    <table class='table'>
+      <h1>Login Here</h1>
+      <p>*Incorrect username or password</p>
+      <tr>
+        <td><input type="text" placeholder="Username" id='login-uname'></td>
+      </tr>
+      <tr>
+        <td><input type="password" placeholder="Password" id='login-pass'></td>
+      </tr>
+      <input type="hidden" id="relo">
+      <input type="hidden" id="relq">
+      <tr>
+        <td><input type="submit" id="log" value="Login" onClick="log()"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="container">
+    <div class="container_top">
+      <div class="profiles">
+        <img id='profile_pic'>
+        <b id='profile_name'>User</b>
+      </div>
+      <!-- <a class="open-modal" href="#modal-input"> -->
+        <div class="add_patient" onclick='oinput()'>
+          <h3>+</h3>
+          <div class="add_patient_text">
+            Add Patient
+          </div>
+        </div>
+      <!-- </a> -->
+      <input type="submit" value="Logout" id="out" onclick="logout()">
+      <button onclick="refresh()" id="btn_refresh">&#8635; Refresh Page</button>
+    </div>
+  </div>
+
+  <!-- <a class="open-modal" href="#modal-output"> -->
+    <div class="container_middle">
+      <ul class='patients_list'>
+      </ul>
+    </div>
+  <!-- </a> -->
+
+
+  <div id="modal-output" class="modal">
+    <div class="modal__content" id='modal-content'>
+      <img class="showdata" id="patientpic">
+      <br>
+      <table style="width: 50%; margin-top: 7vw;">
+        <col style="width: 93px" />
+        <tr>
+          <td><label>Name</label></td>
+          <td><input type="text" class="showdata" readonly></td>
+        </tr>
+        <tr>
+          <td><label>Age</label></td>
+          <td><input type="text" class="showdata" readonly></td>
+        </tr>
+        <tr>
+          <td><label>Address</label></td>
+          <td><textarea class="showdata" style="height: 10vw;" readonly></textarea></td>
+        </tr>
+        <tr>
+          <td><label>Blood Group</label></td>
+          <td><input type="text" class="showdata" readonly></td>
+        </tr>
+        <tr>
+          <td><label>Guardian</label></td>
+          <td><input type="text" class="showdata" readonly></td>
+        </tr>
+        <tr>
+          <td><label>Phone</label></td>
+          <td><input type="text" class="showdata" readonly></td>
+        </tr>
+      </table>
+      <span class="modal__close" onclick="closebox()">&times;</span>
+    </div>
+  </div>
+
+  <div id="modal-input" class="modal">
+    <div class="modal__content">
+      <input type="text" id="pname" placeholder="Name">
+      <input type="number" min="1" id="page" placeholder="Age">
+      <textarea id="paddress" cols="30" rows="10" placeholder="Address"></textarea>
+      <select id='pbgroup'>
+        <option>A Positive</option>
+        <option>A Negative</option>
+        <option>A Unknown</option>
+        <option>B Positive</option>
+        <option>B Negative</option>
+        <option>B Unknown</option>
+        <option>AB Positive</option>
+        <option>AB Negative</option>
+        <option>AB Unknown</option>
+        <option>O Positive</option>
+        <option>O Negative</option>
+        <option>O Unknown</option>
+        <option>Unknown</option>
+      </select>
+      <input type="text" id="pguardian" placeholder="Guardian">
+      <input type="tel" id="pphone" maxlength="10" placeholder="Mobile Number">
+      <form id="form">
+        <input name="file" id="uploadfile" type="file">
+        <input name="filename" id="filename" type="hidden">
+        <input id="submit" type="submit" value="Upload Image">
+      </form>
+      <input type="button" id='pbtn' onclick="psubmit()" value="Submit">
+      <span href="#" class="modal__close" onclick="closebox()">&times;</span>
+      <input type="text" id="premarks" placeholder="Remarks">
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+
+</body>
+
+</html>
